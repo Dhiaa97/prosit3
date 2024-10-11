@@ -70,6 +70,19 @@ public class employe {
     public void afficherSalaire() {
         System.out.println("Salaire de " + nom + ": " + calculerSalaire() + " DT");
     }
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true; 
+        if (o == null || getClass() != o.getClass()) return false;
+
+        employe employe = (employe) o;
+
+
+        return id == employe.id &&
+                nbrHeure == employe.nbrHeure &&
+                nom.equals(employe.nom) &&
+                adresse.equals(employe.adresse);
+    }
 
 
 }
